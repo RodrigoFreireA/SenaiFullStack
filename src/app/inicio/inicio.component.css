@@ -1,0 +1,92 @@
+main{
+    min-height: 500px;
+}
+
+#section-banner {
+  min-height: 500px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  overflow: hidden; /* Garante que as imagens não ultrapassem o contêiner */
+  position: relative;
+}
+
+.carousel-item img {
+  height: 500px; /* Altura desejada */
+  width: 1000px; /* Largura desejada */
+  object-fit: cover;
+  opacity: 0;
+}
+
+.carousel-item.active img {
+  animation: fadeInOut 5s ease-in-out; /* Ajuste o tempo da animação conforme necessário */
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.carousel-item.active img {
+  animation: fadeInOut 15s infinite; /* Ajuste o tempo da animação conforme necessário */
+}
+
+
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: auto;
+  }
+  
+  mat-grid-list{
+    margin: 10px 0px;
+  }
+
+  mat-grid-tile{
+    padding: 2px;
+    border-radius: 30px;
+}
+
+mat-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-card-actions{
+    display: flex;
+    justify-content: space-around;
+  }  
+
+  mat-card-actions p{
+    color: red;
+    font-size: 30px;
+  }
+
+  mat-card img{
+    height: 300px;
+    width: 300px;
+  }
+
+
+
+
+
