@@ -15,21 +15,22 @@ namespace Exo.WebApi.Controllers
     public class UsuariosController : ControllerBase
     {
         private readonly UsuarioRepository _usuarioRepository;
+
         public UsuariosController(UsuarioRepository usuarioRepository)
         {
             _usuarioRepository = usuarioRepository;
         }
 
-        // get -> /api/usuarios
+        // GET -> /api/usuarios
         [HttpGet]
         public IActionResult Listar()
         {
             return Ok(_usuarioRepository.Listar());
         }
 
-        // Novo código POST para auxiliar o método de Login.
-        [HttpPost] // Adiciona a anotação HttpPost
-        public IActionResult Post(Usuario usuario)
+        // POST -> /api/usuarios/login
+        [HttpPost("login")] // Adiciona a anotação HttpPost
+        public IActionResult Login(Usuario usuario)
         {
             Usuario usuarioBuscado = _usuarioRepository.Login(usuario.Email, usuario.Senha);
             if (usuarioBuscado == null)
@@ -65,7 +66,15 @@ namespace Exo.WebApi.Controllers
             return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
         }
 
-        // get -> /api/usuarios/{id}
+        // POST -> /api/usuarios
+        [HttpPost]
+        public IActionResult Cadastrar(Usuario usuario)
+        {
+            _usuarioRepository.Cadastrar(usuario);
+            return StatusCode(201);
+        }
+
+        // GET -> /api/usuarios/{id}
         [HttpGet("{id}")] // Faz a busca pelo ID.
         public IActionResult BuscarPorId(int id)
         {
@@ -77,7 +86,7 @@ namespace Exo.WebApi.Controllers
             return Ok(usuario);
         }
 
-        // put -> /api/usuarios/{id}
+        // PUT -> /api/usuarios/{id}
         // Atualiza.
         [Authorize]
         [HttpPut("{id}")]
@@ -94,7 +103,7 @@ namespace Exo.WebApi.Controllers
             }
         }
 
-        // delete -> /api/usuarios/{id}
+        // DELETE -> /api/usuarios/{id}
         [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
