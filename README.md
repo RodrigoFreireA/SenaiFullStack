@@ -1,59 +1,65 @@
-# AngularMaterialCrud
+# CRUD Angular Material
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+Este é um projeto de CRUD (Create, Read, Update, Delete) desenvolvido com **Angular 19** e **Angular Material**, permitindo a gestão de itens de forma intuitiva.
 
-## Development server
+## 🚀 Tecnologias Utilizadas
+- **Angular 19**
+- **Angular Material** (UI responsiva e moderna)
+- **TypeScript**
+- **RxJS** (Gerenciamento reativo de estados)
 
-To start a local development server, run:
+## 📦 Instalação
 
-```bash
-ng serve
+1. **Clone o repositório**:
+   ```sh
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+   ```
+2. **Instale as dependências**:
+   ```sh
+   npm install
+   ```
+3. **Inicie o servidor local**:
+   ```sh
+   ng serve --open
+   ```
+
+## 🛠️ Funcionalidades
+✅ Tela inicial de boas-vindas com **Material Design**
+✅ Listagem de itens em **tabela responsiva**
+✅ CRUD completo (Criar, Ler, Atualizar, Excluir)
+✅ Modais com **MatDialog** para formulários
+✅ Navegação entre telas com **RouterModule**
+✅ Interface responsiva e intuitiva
+
+## 📂 Estrutura do Projeto
+```
+angular-material-crud/
+├── src/app/
+│   ├── components/
+│   │   ├── home/          # Tela inicial
+│   │   ├── item-list/     # Listagem de itens
+│   │   ├── item-form/     # Formulário de edição
+│   ├── services/          # Serviço para gerenciar itens
+│   ├── app.component.ts   # Componente principal
+│   ├── app.config.ts      # Configuração de rotas
+│   ├── app.module.ts      # Módulo raiz (caso não seja standalone)
+├── angular.json           # Configurações do projeto
+├── package.json           # Dependências e scripts
+├── README.md              # Documentação do projeto
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🎨 Captura de Tela
+![CRUD Angular Material](https://via.placeholder.com/1200x600.png?text=CRUD+Angular+Material)
 
-## Code scaffolding
+## 🤝 Contribuição
+1. **Crie uma branch**:
+   ```sh
+   git checkout -b minha-feature
+   ```
+2. **Implemente sua melhoria**
+3. **Envie um Pull Request** ✨
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📄 Licença
+Este projeto está sob a licença MIT. Sinta-se à vontade para usá-lo e melhorá-lo! 🚀
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
