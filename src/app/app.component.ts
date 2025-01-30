@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  standalone: true, // ✅ Standalone component
+  imports: [
+    CommonModule,
+    MatToolbarModule, // ✅ Importação correta do toolbar
+    RouterModule      // ✅ Necessário para <router-outlet>
+  ]
 })
-export class AppComponent {
-  title = 'angular-material-crud';
-}
+export class AppComponent { }
